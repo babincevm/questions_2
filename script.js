@@ -209,13 +209,21 @@ window.addEventListener('DOMContentLoaded', async () => {
                         `;
                 }, ``);
             } else {
-                $question_template.querySelector('.question__answers').innerHTML = `<textarea name="${question.id}"></textarea>`;
+                $question_template.querySelector('.question__answers').innerHTML = `<textarea name="${question.id}" class="textarea"></textarea>`;
             }
             let $current_question_wrapper = document.importNode($question_template, true);
             if (question.pre) {
                 $current_question_wrapper.querySelector('.question__name')
                     .insertAdjacentHTML('afterend', `<pre>${question.pre}</pre>`);
             }
+            /**
+             * Регулярка для проверки поля
+             */
+            $current_question_wrapper.querySelector('.textarea')?.addEventListener('input', event => {
+                if (event.data && !event.data.match(/\d/)) {
+                    event.target.value = event.target.value.slice(0, -1);
+                }
+            });
             $questions_container.appendChild($current_question_wrapper);
         })
     }

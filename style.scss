@@ -1,0 +1,272 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  width: 100%;
+  height: 80px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.container {
+  max-width: 1500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 50px 100px;
+
+}
+
+.auth {
+  &__overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(black, 0.3);
+  }
+
+  &__container {
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    width: 500px;
+    height: 400px;
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 30px;
+    overflow: hidden;
+
+    &_hidden {
+      display: none;
+    }
+  }
+
+
+  &__form-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+
+  &__form-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+
+    &_hidden {
+      display: none;
+    }
+
+    h4 {
+      font-size: 20px;
+    }
+
+    form {
+      margin-top: auto;
+      margin-bottom: auto;
+      width: 100%;
+      padding: 30px;
+    }
+  }
+
+  &__switcher {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 0;
+    height: 70px;
+
+    &-btn {
+      background-color: rgba(black, 0.15);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 50%;
+      transition: all .2s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba(black, 0.25);
+      }
+    }
+  }
+
+}
+
+.form {
+  &__input-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    input {
+      height: 30px;
+      width: 60%;
+      padding: 5px 10px;
+      border: 1px solid rgba(black, .5);
+      border-radius: 5px;
+      outline: none;
+    }
+  }
+
+  &__button-wrapper {
+    justify-content: center;
+    margin-top: 40px;
+
+    button {
+      width: 40%;
+      height: 30px;
+      cursor: pointer;
+      outline: none;
+    }
+  }
+}
+
+
+.question {
+  &__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    form {
+      width: 100%;
+    }
+  }
+
+  &__question-wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    background-color: #ccc;
+    border-radius: 10px;
+    padding: 20px;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    pre {
+      margin-bottom: 20px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      user-select: none;
+    }
+    textarea {
+      display: flex;
+      align-items: center;
+      padding: 5px 10px;
+      min-height: 60px;
+      outline: none;
+      border: 1px solid black;
+      border-radius: 5px;
+      max-width: 100%;
+      min-width: 100%;
+    }
+  }
+
+  &__name {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__answers {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  &__answer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50px;
+    background-color: #eee;
+    padding: 10px;
+    cursor: pointer;
+    transition: all .3s;
+
+    &:first-child {
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+    }
+
+    &:last-child {
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+
+    &:hover {
+      background-color: #d7d7d7;
+    }
+
+    input {
+      margin-right: 20px;
+    }
+  }
+
+  &__btn-wrapper {
+    display: flex;
+    margin-top: 20px;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+
+    button, a {
+      height: 50px;
+      min-width: 150px;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #ccc;
+      cursor: pointer;
+      transition: all .3s;
+
+      &:hover {
+        background-color: #bfbfbf;
+      }
+
+    }
+  }
+}
+
+#download {
+  outline: none;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+}

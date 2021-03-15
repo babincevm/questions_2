@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.min.css">
+</head>
+<body>
+
+
+<template id="question_wrapper">
+    <div class="question__question-wrapper">
+        <div class="question__name">
+        </div>
+        <div class="question__answers">
+        </div>
+    </div>
+</template>
+
+<main>
+    <!--AUTH FORM START-->
+    <section id="auth__container">
+        <div class="auth__overlay"></div>
+        <div class="auth__container" id="forms">
+            <div class="auth__form-container">
+                <div class="auth__form-wrapper" id="login">
+                    <h4>Авторизация</h4>
+                    <form action="https://enigmatic-savannah-62566.herokuapp.com/user/login/" method="post">
+                        <div class="form__input-wrapper">
+                            <label for="login__name">Имя пользователя</label>
+                            <input type="text" id="login__name" name="username">
+                        </div>
+
+                        <div class="form__input-wrapper">
+                            <label for="login__password">Пароль</label>
+                            <input type="password" id="login__password" name="password">
+                        </div>
+                        <div class="form__input-wrapper form__button-wrapper">
+                            <button type="submit">Вход</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="auth__form-wrapper auth__form-wrapper_hidden" id="auth">
+                    <h4>Регистрация</h4>
+                    <form action="https://enigmatic-savannah-62566.herokuapp.com/user/register/" method="post">
+                        <div class="form__input-wrapper">
+                            <label for="auth__name">Имя пользователя</label>
+                            <input type="text" id="auth__name" name="username">
+                        </div>
+
+                        <div class="form__input-wrapper">
+                            <label for="auth__password">Пароль</label>
+                            <input type="password" id="auth__password" name="password">
+                        </div>
+                        <div class="form__input-wrapper form__button-wrapper">
+                            <button type="submit">Зарегестрироваться</button>
+                        </div>
+                    </form>
+                </div>
+
+
+            </div>
+            <div class="auth__switcher" id="switcher">
+                <div class="auth__switcher-btn" id="switcher__login">Вход</div>
+                <div class="auth__switcher-btn" id="switcher__auth">Регистрация</div>
+            </div>
+        </div>
+    </section>
+    <!--AUTH FORM END-->
+
+
+    <h1>Вопросы по теме язык JavaScript (переменные, операторы, арифметика и т.д.)</h1>
+
+    <section class="container">
+
+        <div class="question__container">
+            <form action="https://enigmatic-savannah-62566.herokuapp.com/questions/check/" method="post">
+                <div id="questions"></div>
+                <div class="question__btn-wrapper">
+                    <button type="submit">Ответить</button>
+                </div>
+            </form>
+        </div>
+
+    </section>
+
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

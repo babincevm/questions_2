@@ -87,7 +87,6 @@ window.addEventListener('DOMContentLoaded', async () => {
     /**
      * Если пользователь зарегестрирован заполняем вопросы
      */
-    //TODO: дописать приколюху рефреша
     try {
         await fillQuestions();
         return
@@ -121,7 +120,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     /**
      * Обработка сабмита формы логина
      */
-    $login_form.querySelector('form').addEventListener('submit', async event => {
+    $login_form.querySelector('#forms form').addEventListener('submit', async event => {
         event.preventDefault();
         let form_data = Object.fromEntries([...new FormData(event.target)]);
         if (form_data.username && form_data.password) {
@@ -129,8 +128,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                 await auth(form_data, event.target.action, event.target.method)
                 await fillQuestions();
             } catch (e) {
-                // TODO: дописать хендлер неверного логина
-                console.log(`User not found`);
+                alert(`User not found`);
             }
         }
     });
@@ -147,8 +145,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                 await auth(form_data, event.target.action, event.target.method);
                 return fillQuestions();
             } catch (e) {
-                // TODO: дописать хендлер неверной регистрации
-                console.log(`Bad request`);
+                alert(`Bad request`);
             }
         }
     });

@@ -178,6 +178,7 @@ h1 {
       padding: 20px;
       border-radius: 5px;
       user-select: none;
+      overflow-x: scroll;
     }
     textarea {
       display: flex;
@@ -212,7 +213,7 @@ h1 {
     flex-direction: row-reverse;
     justify-content: flex-end;
     align-items: center;
-    height: 50px;
+    min-height: 50px;
     background-color: #eee;
     padding: 10px;
     cursor: pointer;

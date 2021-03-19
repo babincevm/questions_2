@@ -120,7 +120,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     /**
      * Обработка сабмита формы логина
      */
-    $login_form.querySelector('#forms form').addEventListener('submit', async event => {
+    $login_form.querySelector('form').addEventListener('submit', async event => {
         event.preventDefault();
         let form_data = Object.fromEntries([...new FormData(event.target)]);
         if (form_data.username && form_data.password) {
@@ -130,6 +130,8 @@ window.addEventListener('DOMContentLoaded', async () => {
             } catch (e) {
                 alert(`User not found`);
             }
+        } else {
+            alert(`Incorrect data`);
         }
     });
 
@@ -147,6 +149,8 @@ window.addEventListener('DOMContentLoaded', async () => {
             } catch (e) {
                 alert(`Bad request`);
             }
+        } else {
+            alert(`Incorrect data`);
         }
     });
 
